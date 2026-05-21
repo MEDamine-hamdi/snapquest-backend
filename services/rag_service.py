@@ -7,7 +7,7 @@ import json, os
 # Charger le vector store une seule fois au démarrage
 embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 vectorstore = Chroma(
-    persist_directory="../rag/chroma_db",
+    persist_directory="rag/chroma_db",
     embedding_function=embeddings
 )
 llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0.7, groq_api_key=os.getenv("GROQ_API_KEY"))
